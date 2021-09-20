@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.*;
+
 public class P1 {
-    public class main3 {
+
         public static void main(String[] args)
         {
 
-            String sNombre ="alb erto fer alf al7 dez dez san chez";
+            String sNombre ="alb erto fer fer alf al7 alb alb dez dez san chez";
 
             //imprimir lista de palabras de un texto
 
@@ -12,7 +15,7 @@ public class P1 {
 
 
 
-        String arraySeccion [] = sNombre.split(" ");
+        /*String arraySeccion [] = sNombre.split(" ");
 
         for(int i = 0; i < arraySeccion.length ;i++ )
         {
@@ -21,10 +24,30 @@ public class P1 {
                 System.out.println(arraySeccion[i]);
             }
 
-        }
+        }*/
             // numero de palabras iguales
-            // sustituir las vocales por un 2 de las palabras que empiecen por "el"
+
+            String arraySeccion [] = sNombre.split(" ");
+            List iguales = new ArrayList();
+
+            int contador = 0;
+
+            for(int i = 0; i < arraySeccion.length ;i++ )
+            {
+                for(int j = 0; j < arraySeccion.length ;j++ )
+                {
+                if(arraySeccion[i].equals(arraySeccion[j]) && !iguales.contains(arraySeccion[i]) && (i!=j) )
+                {
+                   iguales.add(arraySeccion[i]);
+                }
+
+            }
+
+
+
+            // sustituir las vocales por un 2 de las palabras que empiecen por "al"
         }
+            System.out.println(iguales.size());
     }
 
 }
