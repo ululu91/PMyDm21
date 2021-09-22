@@ -6,7 +6,7 @@ public class P1 {
         public static void main(String[] args)
         {
 
-            String sNombre ="alb erto fer fer alf al7 alb alb dez dez san chez";
+            String sNombre ="alb erto ali fer fer alf al7 alb alb dez dez san chez";
 
             //imprimir lista de palabras de un texto
 
@@ -27,7 +27,7 @@ public class P1 {
         }*/
             // numero de palabras iguales
 
-            String arraySeccion [] = sNombre.split(" ");
+            /*String arraySeccion [] = sNombre.split(" ");
             List iguales = new ArrayList();
 
             int contador = 0;
@@ -41,13 +41,28 @@ public class P1 {
                    iguales.add(arraySeccion[i]);
                 }
 
-            }
+            }*/
 
 
 
             // sustituir las vocales por un 2 de las palabras que empiecen por "al"
-        }
-            System.out.println(iguales.size());
-    }
 
-}
+            String vocales [] = sNombre.split(" ");
+
+            for(int i = 0; i < vocales.length  ;i++ )
+            {
+                if(vocales[i].substring(0).startsWith("al"))
+            {
+                String b = vocales[i].replace("a","2")
+                                     .replace("e","2")
+                                     .replace("i","2")
+                                     .replace("o","2")
+                                     .replace("u","2");
+
+                System.out.println(b);
+
+
+            }
+
+            }
+}}
