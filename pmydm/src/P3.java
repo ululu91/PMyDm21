@@ -26,12 +26,58 @@ public class P3 {
 
         imprimirCarton(bingo2);
 
+
+
+         ArrayList<List<String>> contenedorCartones = new ArrayList<>();
+
         int nNumerosTotalCartones = 40;
-        for (int i = 0; i <nNumerosTotalCartones ; i++) {
+        for (int i = 0; i <nNumerosTotalCartones ; i++)
+        {
             List<String> cartonI = GenerarCarton(marca);
-            imprimirCarton(cartonI);
+            if(!existeCarton(cartonI,contenedorCartones))
+            {
+                contenedorCartones.add(cartonI);
+                imprimirCarton(cartonI);
+            }
+
 
         }
+    }
+
+    /**
+     * Esta funcion devuelve si el carton introducido esta en la estructura ContenedorCartones
+     * @param cartonI este es el carton con el que se va a comparar
+     * @param contenedorCartones esto es una estructura que contiene los cartones
+     * @return devuelve si el carton introducido esta en la estructura ContenedorCartones
+     */
+    private static boolean existeCarton(List<String> cartonI, ArrayList<List<String>> contenedorCartones)
+    {
+
+        for (int i = 0; i <contenedorCartones.size() ; i++)
+        {
+
+
+            if (comparar2Cartones(cartonI,contenedorCartones.get(i)))
+            {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    private static boolean comparar2Cartones(List<String> cartonI, List<String> carton2)
+    {
+        for (int i = 0; i <cartonI.size() ; i++)
+        {
+            if (cartonI.contains(carton2.get(i)))
+            {
+                return false;
+            }
+
+
+        }
+        return true;
     }
 
     private static void imprimirCarton(List<String> bingo2) {
